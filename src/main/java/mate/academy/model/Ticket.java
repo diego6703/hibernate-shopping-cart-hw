@@ -16,7 +16,7 @@ public class Ticket {
     @ManyToOne
     private User user;
     @ManyToOne
-    private Ticket ticket;
+    private ShoppingCart shoppingCart;
 
     public Ticket() {
     }

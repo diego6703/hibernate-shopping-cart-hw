@@ -2,6 +2,7 @@ package mate.academy.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import mate.academy.dao.ShoppingCartDao;
 import mate.academy.dao.TicketDao;
 import mate.academy.lib.Inject;
@@ -31,7 +32,8 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
 
     @Override
     public ShoppingCart getByUser(User user) {
-        return shoppingCartDao.getByUser(user).get();
+        Optional<ShoppingCart> sh = shoppingCartDao.getByUser(user);
+        return sh.orElseGet(ShoppingCart::new);
     }
 
     @Override
