@@ -15,6 +15,8 @@ public class Ticket {
     private MovieSession movieSession;
     @ManyToOne
     private User user;
+    @ManyToOne
+    private Ticket ticket;
 
     public Ticket() {
     }
